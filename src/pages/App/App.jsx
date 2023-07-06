@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import './App.css';
 
 import { Routes, Route } from 'react-router-dom';
-
+import { movies } from '../../data.js'
 
 import NavBar from '../../components/Navbar';
 import ActorListPage from '../ActorListPage';
@@ -23,7 +23,7 @@ function App() {
       <Routes>
         <Route path="/" element={<MoviesListPage/>} />
         <Route path="/movies/:movieName" element={<MovieDetailPage/>} />
-        <Route path="/actors" element={<ActorListPage/>} />
+        <Route path="/actors" element={<ActorListPage movies={movies} />} />
       </Routes>
       :
       <LoginPage />
